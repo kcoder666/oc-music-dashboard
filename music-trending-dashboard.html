@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎵 Top Music Videos Trending - 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #ff006e, #8338ec, #3a86ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            color: #a0a0a0;
+            font-size: 1.2em;
+        }
+
+        .last-updated {
+            background: rgba(255, 255, 255, 0.1);
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 20px;
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .card-icon {
+            font-size: 2.5em;
+            margin-right: 15px;
+        }
+
+        .card-title {
+            font-size: 1.4em;
+            font-weight: 600;
+        }
+
+        .card-subtitle {
+            color: #a0a0a0;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .track-list {
+            list-style: none;
+        }
+
+        .track-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: background 0.2s ease;
+        }
+
+        .track-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            padding-left: 10px;
+            border-radius: 8px;
+        }
+
+        .track-number {
+            background: linear-gradient(135deg, #ff006e, #8338ec);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9em;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .track-info {
+            flex: 1;
+        }
+
+        .track-name {
+            font-weight: 500;
+            margin-bottom: 3px;
+        }
+
+        .track-artist {
+            color: #a0a0a0;
+            font-size: 0.85em;
+        }
+
+        .track-duration {
+            color: #8338ec;
+            font-size: 0.85em;
+            margin-left: 10px;
+        }
+
+        .playlist-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #ff006e, #8338ec);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .playlist-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(255, 0, 110, 0.3);
+        }
+
+        .shorts-section {
+            margin-top: 50px;
+        }
+
+        .section-title {
+            font-size: 2em;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .shorts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .short-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .short-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .short-stats {
+            color: #a0a0a0;
+            font-size: 0.85em;
+            display: flex;
+            gap: 15px;
+        }
+
+        .stat-badge {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px 12px;
+            border-radius: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 50px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #a0a0a0;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎵 Top Music Videos Trending</h1>
+            <p class="subtitle">Tổng hợp những video âm nhạc hot nhất hôm nay</p>
+            <div class="last-updated">
+                📅 Cập nhật: 25/03/2026
+            </div>
+        </header>
+
+        <div class="grid">
+            <!-- Playlist 1 -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-icon">🌍</span>
+                    <div>
+                        <div class="card-title">Top 100 Music Videos Global</div>
+                        <div class="card-subtitle">YouTube Music Global Charts</div>
+                    </div>
+                </div>
+                <ul class="track-list">
+                    <li class="track-item">
+                        <span class="track-number">1</span>
+                        <div class="track-info">
+                            <div class="track-name">Shararat</div>
+                            <div class="track-artist">Dhurandhar | Ranveer, Aditya Dhar</div>
+                        </div>
+                        <span class="track-duration">3:49</span>
+                    </li>
+                    <li class="track-item">
+                        <span class="track-number">2</span>
+                        <div class="track-info">
+                            <div class="track-name">Golden</div>
+                            <div class="track-artist">KPop Demon Hunters | Sony Animation</div>
+                        </div>
+                        <span class="track-duration">3:19</span>
+                    </li>
+                    <li class="track-item">
+                        <span class="track-number">3</span>
+                        <div class="track-info">
+                            <div class="track-name">SWIM</div>
+                            <div class="track-artist">BTS (방탄소년단)</div>
+                        </div>
+                        <span class="track-duration">4:05</span>
+                    </li>
+                </ul>
+                <a href="https://www.youtube.com/playlist?list=PL4fGSI1pDJn5kI81J1fYWK5eZRl1zJ5kM" 
+                   class="playlist-link" target="_blank">
+                    Xem Playlist →
+                </a>
+            </div>
+
+            <!-- Playlist 2 -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-icon">📊</span>
+                    <div>
+                        <div class="card-title">Daily Top Music Videos</div>
+                        <div class="card-subtitle">Global Charts - Updated Daily</div>
+                    </div>
+                </div>
+                <ul class="track-list">
+                    <li class="track-item">
+                        <span class="track-number">1</span>
+                        <div class="track-info">
+                            <div class="track-name">SWIM</div>
+                            <div class="track-artist">BTS (방탄소년단)</div>
+                        </div>
+                        <span class="track-duration">4:05</span>
+                    </li>
+                    <li class="track-item">
+                        <span class="track-number">2</span>
+                        <div class="track-info">
+                            <div class="track-name">Shararat</div>
+                            <div class="track-artist">Dhurandhar Cast</div>
+                        </div>
+                        <span class="track-duration">3:49</span>
+                    </li>
+                    <li class="track-item">
+                        <span class="track-number">3</span>
+                        <div class="track-info">
+                            <div class="track-name">Risk It All</div>
+                            <div class="track-artist">Bruno Mars</div>
+                        </div>
+                        <span class="track-duration">3:31</span>
+                    </li>
+                </ul>
+                <a href="https://www.youtube.com/playlist?list=PL4fGSI1pDJn6t3TXLGiiJdD-sZbrG3tG0" 
+                   class="playlist-link" target="_blank">
+                    Xem Playlist →
+                </a>
+            </div>
+
+            <!-- Playlist 3 -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-icon">🎶</span>
+                    <div>
+                        <div class="card-title">Top 100 Songs Global</div>
+                        <div class="card-subtitle">YouTube Music Charts</div>
+                    </div>
+                </div>
+                <ul class="track-list">
+                    <li class="track-item">
+                        <span class="track-number">1</span>
+                        <div class="track-info">
+                            <div class="track-name">NO BATIDÃO</div>
+                            <div class="track-artist">ZXKAI</div>
+                        </div>
+                        <span class="track-duration">1:30</span>
+                    </li>
+                    <li class="track-item">
+                        <span class="track-number">2</span>
+                        <div class="track-info">
+                            <div class="track-name">Golden</div>
+                            <div class="track-artist">KPop Demon Hunters</div>
+                        </div>
+                        <span class="track-duration">3:19</span>
+                    </li>
+                    <li class="track-item">
+                        <span class="track-number">3</span>
+                        <div class="track-info">
+                            <div class="track-name">Raindance</div>
+                            <div class="track-artist">Dave ft. Tems</div>
+                        </div>
+                        <span class="track-duration">3:41</span>
+                    </li>
+                </ul>
+                <a href="https://www.youtube.com/playlist?list=PL4fGSI1pDJn6puJdseH2Rt9sMvt9E2M4i" 
+                   class="playlist-link" target="_blank">
+                    Xem Playlist →
+                </a>
+            </div>
+
+            <!-- New Songs 2026 -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-icon">✨</span>
+                    <div>
+                        <div class="card-title">New Songs 2026</div>
+                        <div class="card-subtitle">Vevo & New Releases</div>
+                    </div>
+                </div>
+                <ul class="track-list">
+                    <li class="track-item">
+                        <span class="track-number">1</span>
+                        <div class="track-info">
+                            <div class="track-name">Risk It All</div>
+                            <div class="track-artist">Bruno Mars</div>
+                        </div>
+                        <span class="track-duration">3:31</span>
+                    </li>
+                    <li class="track-item">
+                        <span class="track-number">2</span>
+                        <div class="track-info">
+                            <div class="track-name">Cold</div>
+                            <div class="track-artist">BigXthaPlug ft. Post Malone</div>
+                        </div>
+                        <span class="track-duration">3:09</span>
+                    </li>
+                    <li class="track-item">
+                        <span class="track-number">3</span>
+                        <div class="track-info">
+                            <div class="track-name">The Fate of Ophelia</div>
+                            <div class="track-artist">Taylor Swift</div>
+                        </div>
+                        <span class="track-duration">3:59</span>
+                    </li>
+                </ul>
+                <a href="https://www.youtube.com/playlist?list=PLDIoUOhQQPlWvtxdeVTG3i7-SlSN0jfWj" 
+                   class="playlist-link" target="_blank">
+                    Xem Playlist →
+                </a>
+            </div>
+
+            <!-- US Top 50 -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-icon">🇺🇸</span>
+                    <div>
+                        <div class="card-title">Top 50 Pop - USA</div>
+                        <div class="card-subtitle">United States Charts</div>
+                    </div>
+                </div>
+                <ul class="track-list">
+                    <li class="track-item">
+                        <span class="track-number">1</span>
+                        <div class="track-info">
+                            <div class="track-name">Risk It All</div>
+                            <div class="track-artist">Bruno Mars</div>
+                        </div>
+                        <span class="track-duration">3:31</span>
+                    </li>
+                    <li class="track-item">
+                        <span class="track-number">2</span>
+                        <div class="track-info">
+                            <div class="track-name">The Fate of Ophelia</div>
+                            <div class="track-artist">Taylor Swift</div>
+                        </div>
+                        <span class="track-duration">3:59</span>
+                    </li>
+                    <li class="track-item">
+                        <span class="track-number">3</span>
+                        <div class="track-info">
+                            <div class="track-name">Choosin' Texas</div>
+                            <div class="track-artist">Ella Langley</div>
+                        </div>
+                        <span class="track-duration">3:52</span>
+                    </li>
+                </ul>
+                <a href="https://www.youtube.com/playlist?list=PL4fGSI1pDJn77aK7sAW2AT0oOzo5inWY8" 
+                   class="playlist-link" target="_blank">
+                    Xem Playlist →
+                </a>
+            </div>
+
+            <!-- Top Hits Mix -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-icon">🔥</span>
+                    <div>
+                        <div class="card-title">Top Hits 2026 Mix</div>
+                        <div class="card-subtitle">2h 29m Non-Stop Music</div>
+                    </div>
+                </div>
+                <ul class="track-list">
+                    <li class="track-item">
+                        <span class="track-number">♪</span>
+                        <div class="track-info">
+                            <div class="track-name">As It Was</div>
+                            <div class="track-artist">Various Artists</div>
+                        </div>
+                    </li>
+                    <li class="track-item">
+                        <span class="track-number">♪</span>
+                        <div class="track-info">
+                            <div class="track-name">Flowers</div>
+                            <div class="track-artist">Various Artists</div>
+                        </div>
+                    </li>
+                    <li class="track-item">
+                        <span class="track-number">♪</span>
+                        <div class="track-info">
+                            <div class="track-name">Too Sweet</div>
+                            <div class="track-artist">Various Artists</div>
+                        </div>
+                    </li>
+                </ul>
+                <a href="https://www.youtube.com/watch?v=fTKqtvXjkvo" 
+                   class="playlist-link" target="_blank">
+                    Nghe Ngay →
+                </a>
+            </div>
+        </div>
+
+        <!-- Shorts Section -->
+        <div class="shorts-section">
+            <h2 class="section-title">📱 Shorts Viral</h2>
+            <div class="shorts-grid">
+                <div class="short-card">
+                    <div class="short-title">Top 5 Trending Songs 2026 🔥</div>
+                    <div class="short-stats">
+                        <span class="stat-badge">👁️ 11K views</span>
+                        <span class="stat-badge">🎵 Viral</span>
+                    </div>
+                </div>
+                <div class="short-card">
+                    <div class="short-title">Top 5 Viral Instagram Songs 2026</div>
+                    <div class="short-stats">
+                        <span class="stat-badge">👁️ 187K views</span>
+                        <span class="stat-badge">🎵 Trending</span>
+                    </div>
+                </div>
+                <div class="short-card">
+                    <div class="short-title">Top 4 Viral Songs 🔥🎧</div>
+                    <div class="short-stats">
+                        <span class="stat-badge">👁️ 23K views</span>
+                        <span class="stat-badge">⭐ Justin Bieber</span>
+                    </div>
+                </div>
+                <div class="short-card">
+                    <div class="short-title">Most Popular Songs This Week</div>
+                    <div class="short-stats">
+                        <span class="stat-badge">👁️ 27K views</span>
+                        <span class="stat-badge">📈 Weekly</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>🎵 Dashboard được tạo tự động từ YouTube Trending</p>
+            <p style="margin-top: 10px; font-size: 0.85em;">
+                Data source: YouTube Music Charts | Generated: 2026-03-25
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
